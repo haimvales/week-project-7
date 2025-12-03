@@ -1,4 +1,6 @@
+import { nanoid } from "nanoid";
 import { log } from "node:console";
+
 
 export function isasin(list,value){
     let fleg = false;
@@ -11,24 +13,23 @@ export function isasin(list,value){
     return fleg 
 }
 
-export function 
-asall(val){
-    if (!('id' in val)) return true
-    if (!('name_t' in val)) return true
+export function asall(val){
+        if (val == null || typeof val !== 'object') {
+        console.error("Error: Input is not a valid object:", val);
+        return true;} // או החזר false, תלוי בהיגיון העסקי שלך כשיש קלט לא תקין
     if (!('text' in val)) return true
     if (!('weapon' in val)) return true
     return false
 }
 
 export function addid(val){
-    if ((val.id == false) || (typeof(val.id) !== 'string' &&  typeof(val.id) !== 'number'))
-        val.id = 1
-    // לשנות שיוסיף לבד או אם לולאה או ספרייה
+    if (!('id' in val)){val.id = nanoid()}
+    if ((val.id == false) || (typeof(val.id) !== 'string' &&  typeof(val.id) !== 'number')){val.id = nanoid()}   
 }
 
 export function addname(val){
-    if( val.name_t == false)
-        val.name_t = "Muhammad"
+    if (!('id' in val)){val.name_t = "Muhammad"}
+    if( val.name_t == false||typeof(val.name_t) !== 'string'){val.name_t = "Muhammad"}   
 }
 
 export function valuisnotempty(val){
@@ -81,4 +82,5 @@ export function updat(list,index_id,title,value){
         return  `לא קיים הערך המבוקש`   
     }   
 }
+
 

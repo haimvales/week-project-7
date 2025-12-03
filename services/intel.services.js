@@ -5,12 +5,12 @@ import { log } from "node:console";
 import {intels} from "../db/intels.js"
 import {isasin,asall,addid,addname,valuisnotempty,sortdefult,sortdyvalue,searchbyvalue,deletebyvalue,updat} from "../utils/functions.js"
 
-console.log(intels);
-
 
 export function add(list,value){
         // בודק אם יש לו את כל המפתחות
-        if (asall(value))    
+        if (asall(value))   
+            console.log(value);
+            console.log(typeof(value));
             return "חסר מפתח אחד הכנס את כל המפתחות";   
 
         //אם לא קיים ערך  שיוסיף איידי 
@@ -82,6 +82,8 @@ export function updatbytitle(list,index_id,title,value){
 
         
 
+add(intels,{weapon: [], text: 'yes'})
+console.log(intels);
 
 
 
