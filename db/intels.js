@@ -1,0 +1,1 @@
+export const intels = [{weapon:[],text:"yes",name_t:"b",id:"100"},{weapon:[],text:"no",name_t:"a",id:"22"}]
